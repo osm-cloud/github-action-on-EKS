@@ -3,9 +3,7 @@ name: Push to ECR Repo
 on:
   push:
     branches:
-      - main
-    paths:
-      - /**
+    - main
   workflow_dispatch:
 
 env:
