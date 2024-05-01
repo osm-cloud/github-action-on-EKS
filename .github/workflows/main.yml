@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - main
+    paths:
+      - /**
   workflow_dispatch:
 
 env:
@@ -37,5 +39,6 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: $(date -d "+9 hour" "+%Y%m%d%H%M%S")
         run: |
+          echo $IMAGE_TAG
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
