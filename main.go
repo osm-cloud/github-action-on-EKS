@@ -6,7 +6,7 @@ import (
 )
 
 func health(w http.ResponseWriter, req *http.Request) {
-    fmt.Fprint(w, "hellow version 2 {status:OK}")
+    fmt.Fprint(w, "hellow version 3 {status:OK}")
 }
 
 func dummy(w http.ResponseWriter, req *http.Request) {
